@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddPartController">
+   <children>
+      <Label layoutX="10.0" layoutY="10.0" text="Add Part">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="AddPartInHouseRadBtn" layoutX="120.0" layoutY="15.0" mnemonicParsing="false" onAction="#onActionInHouse" text="In-house">
+         <toggleGroup>
+            <ToggleGroup fx:id="AddPartSource" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="AddPartOutsourcedRadBtn" layoutX="200.0" layoutY="15.0" mnemonicParsing="false" onAction="#onActionOutsourced" text="Outsourced" toggleGroup="$AddPartSource" />
+      <VBox layoutX="176.0" layoutY="70.0" prefHeight="300.0" prefWidth="133.0" spacing="15.0">
+         <children>
+            <TextField fx:id="AddPartIDField" editable="false" promptText="Auto-Generated" />
+            <TextField fx:id="AddPartNameField" />
+            <TextField fx:id="AddPartInventoryField" />
+            <TextField fx:id="AddPartPriceField" />
+            <TextField fx:id="AddPartMaxField" />
+            <TextField fx:id="AddPartMinField" />
+            <TextField fx:id="partSourceField" />
+         </children>
+      </VBox>
+      <VBox layoutX="37.0" layoutY="70.0" prefHeight="300.0" prefWidth="113.0" spacing="21.0">
+         <children>
+            <Label text="Part ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Name">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Inventory ">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Price/Unit">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Max">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label text="Min">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelPartSource" text="Machine ID">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <Button layoutX="235.0" layoutY="360.0" mnemonicParsing="false" onAction="#OnActionCancel" text="Cancel" />
+      <Button layoutX="180.0" layoutY="360.0" mnemonicParsing="false" onAction="#OnActionSavePart" text="Save" />
+   </children>
+</AnchorPane>
